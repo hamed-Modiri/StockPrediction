@@ -1,0 +1,72 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>b1c6e13d-8a4c-4d79-8543-4c0604c4e275</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>StockPrediction.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>StockPrediction</Name>
+    <RootNamespace>StockPrediction</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Agent\actor-critic-agent.py" />
+    <Compile Include="Agent\actor-critic-duel-agent.py" />
+    <Compile Include="Deep\LSTMforecast.py" />
+    <Compile Include="Indexes\portfolio-optimization.py" />
+    <Compile Include="Infra\Downloadfiles.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\module1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SML\which-stock.py" />
+    <Compile Include="StockPrediction.py" />
+    <Compile Include="Summarized\myIndicators.py" />
+    <Compile Include="Summarized\MainSummery.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Test\all_features_example.py" />
+    <Compile Include="Test\bollinger_band_features_example.py" />
+    <Compile Include="Test\roc.py" />
+    <Compile Include="Test\visualize_features.py" />
+    <Compile Include="Test\volume_features_example.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Agent\" />
+    <Folder Include="Deep\" />
+    <Folder Include="ML\" />
+    <Folder Include="Dataset\" />
+    <Folder Include="Indexes\" />
+    <Folder Include="NewFolder1\" />
+    <Folder Include="Infra\" />
+    <Folder Include="Summarized\" />
+    <Folder Include="Test\" />
+    <Folder Include="Results\" />
+    <Folder Include="SML\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dataset\portfo.txt" />
+    <Content Include="Test\visualize_features.ipynb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
